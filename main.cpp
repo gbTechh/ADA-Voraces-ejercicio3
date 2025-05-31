@@ -24,7 +24,7 @@ int maxToneladas(int k , vector<int> &arr){
 	int c = 0;
 	
 	for (int i = arr.size() - 1; i >= 0; --i) {
-		if(k - arr[i] > 0) {
+		if(k - arr[i] >= 0) {
 			k = k - arr[i];
 			c = c + arr[i];
 		}
