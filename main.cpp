@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 	 
-int maxContenedores(int k, vector<int> arr){
+int maxContenedores(int k, vector<int> &arr){
+	sort(arr.begin(), arr.end());
 	if (arr.size() == 2) return 2;
 	int c = 0;
 	
@@ -16,7 +18,8 @@ int maxContenedores(int k, vector<int> arr){
 	return c;
 }
 
-int maxToneladas(int k , vector<int> arr){
+int maxToneladas(int k , vector<int> &arr){
+	sort(arr.begin(), arr.end());
 	if (arr.size() == 2) return 2;
 	int c = 0;
 	
@@ -33,14 +36,14 @@ int main() {
 	//1.a
 	int k = 0;
 	cin >> k;
-	vector<int> arr = {5,6,10};
+	vector<int> arr = {1,2,3,4,5,6};
 	int n = maxContenedores(k, arr);
 	cout<<n<<"\n";
 	
 	//1.b
 	k = 0;
 	cin >> k;
-	vector<int> arr2 = {5,6,10};
+	vector<int> arr2 = {1,2,3,4,5,6};
 	int n2 = maxToneladas(k, arr2);
 	cout<<n2<<"\n";
 	
